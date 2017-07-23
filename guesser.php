@@ -34,7 +34,7 @@ foreach ($secrets as $secret) {
     if ($answer === implode('-', $secret)) {
         echo "  Final answer is [ $answer ] found after $i attempts\n";
     } else {
-        echo "  It appears as though we could crack the secret code\n";
+        echo "  It appears as though we can't crack the secret code\n";
     }
     echo "======================================================\n\n\n\n";
 }
