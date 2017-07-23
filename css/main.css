@@ -1,0 +1,208 @@
+/* For bootstrap */
+body {
+    padding-top: 50px;
+}
+
+#content {
+    width:960px;
+}
+
+.jumbotron {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+/* CSS For the main code entry digit display */
+.digit {
+    background-color: #fff;
+    width:100%;
+    border-radius: 10px;
+    -webkit-box-shadow: inset grey 0 0 12px;
+    -moz-box-shadow: inset grey 0 0 12px;
+    box-shadow: inset grey 0 0 12px;
+}
+
+.digit.digit-error {
+    background-color: #f77;
+}
+
+.digit p,
+#code-input .btn-sq {
+    margin:0;
+    padding:0;
+    font-family: monospace;
+    font-size: 4em;
+}
+
+/* Score board CSS */
+.score ul,
+.score li {
+    list-style : none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* Hide scores initially */
+.score .bulls .bull,
+.score .cows .cow,
+/* when the score is three explicitly override the .bull/cow + .bull/com selector */
+.score .bulls.three .title + .bull + .bull + .bull + .bull,
+.score .cows.three .title + .cow + .cow + .cow + .cow
+{
+    display:none;
+}
+
+/* 
+ * These Styles show the correct number of cows or bulls
+ * depending on the score class applied to on of its parent
+ */
+.score .bulls.one .title + .bull,
+
+.score .bulls.two .title + .bull,
+.score .bulls.two .title + .bull + .bull,
+
+.score .bulls.three .title + .bull,
+.score .bulls.three .title + .bull + .bull,
+.score .bulls.three .title + .bull + .bull + .bull,
+
+.score .bulls.four .title + .bull,
+.score .bulls.four .title + .bull + .bull,
+.score .bulls.four .title + .bull + .bull + .bull,
+.score .bulls.four .title + .bull + .bull + .bull + .bull,
+
+.score .cows.one .title + .cow,
+
+.score .cows.two .title + .cow,
+.score .cows.two .title + .cow + .cow,
+
+.score .cows.three .title + .cow,
+.score .cows.three .title + .cow + .cow,
+.score .cows.three .title + .cow + .cow + .cow,
+
+.score .cows.four .title + .cow,
+.score .cows.four .title + .cow + .cow,
+.score .cows.four .title + .cow + .cow + .cow,
+.score .cows.four .title + .cow + .cow + .cow + .cow
+{
+    display:inline-block;
+}
+
+/* Score type label Cows: Bulls:*/
+.score .title {
+    font-weight:bold;
+    padding-right:1em;
+    vertical-align: middle;
+}
+.score .cow,
+.score .bull {
+    text-align: left;
+    height:50px;
+}
+
+/* fix the height of the point images */
+.score li img {
+    height: 40px;
+}
+
+/* Numeric keypad CSS for code entry */
+#code-input .btn-sq {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 3em;
+    margin: 0 2px;
+}
+
+/*
+ * Crude full screen display mask implementation,
+ * A centered message is displayed at the end of a game.
+ */
+#playagainwrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1500;
+    background-color: #fafafa;
+    display:none;
+}
+
+/* Position content in the center of the wrapper */
+#playagainwrapper > div {
+    width:50%;
+    height: 170px;
+    position:relative;
+    top:50%;
+    padding:40px;
+    margin:-85px auto auto;
+}
+
+
+/* the following is NOT written by me, it was used for Mr Bull's speech bubble. Credit below (SH) */
+/* ==============================================================================================
+== BUBBLE WITH A BORDER AND TRIANGLE - http://nicolasgallagher.com/pure-css-speech-bubbles/demo/
+** ============================================================================================== */
+.triangle-border {
+    position:relative;
+    padding:20px 20px;
+    margin:0 0 3em;
+    border:5px solid #000;
+    color:#333;
+    background:#fff;
+    height:200px;
+    font-size:1.5em;
+    /* css3 */
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    z-index:100; /* So the bubble sits over the Bulls img */
+}
+
+.triangle-border:before {
+    content:"";
+    position:absolute;
+    bottom:-20px;
+    right:40px;
+    border-width:20px 20px 0;
+    border-style:solid;
+    border-color:#000 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+.triangle-border:after {
+    content:"";
+    position:absolute;
+    bottom:-13px;
+    right:47px;
+    border-width:13px 13px 0;
+    border-style:solid;
+    border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* EDITS (SH) */
+/* Start button */
+.triangle-border button {
+    display: block;
+    margin: 12px 0 0;
+}
+
+/* Place Mr Bull underneath the bubble then resize and centre him */
+.triangle-border + p {
+    position:relative;
+    z-index:0;
+    margin-top: -200px;
+}
+
+.triangle-border + p > img {
+    width:85%;
+    margin:0 auto;
+    display:block;
+}

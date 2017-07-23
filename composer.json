@@ -1,0 +1,14 @@
+{
+    "name": "steven/bullsandcows",
+    "description": "A game based on guessing permutations of unique 4 digit numbers.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Steven Hughes",
+            "email": "developer@dotthis.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"BullsAndCows\\": "src/"}
+    }
+}

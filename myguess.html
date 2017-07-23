@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Bulls & Cows</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Bulls & Cows</a>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Bulls &amp; Cows - I'll guess your number?</h1>
+        <p>Welcome to my web App for the code breaking game, Bulls & Cows!</p>
+    </div>
+</div>
+
+<div class="container" id="content">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="jumbotron row">
+                <div class="container">
+                    <div class="row" id="code-view">
+                        <div class="col-xs-3"><div class="digit" data-position="1"><p>0</p></div></div>
+                        <div class="col-xs-3"><div class="digit" data-position="2"><p>0</p></div></div>
+                        <div class="col-xs-3"><div class="digit" data-position="3"><p>0</p></div></div>
+                        <div class="col-xs-3"><div class="digit" data-position="4"><p>0</p></div></div>
+                    </div>
+                    <hr />
+                    <div class="row score">
+                        <div class="col-xs-6 text-left">
+                            <ul class="bulls">
+                                <li class="title">Bulls:</li>
+                                <li class="bull"><img src="img/bull.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="bull"><img src="img/bull.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="bull"><img src="img/bull.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="bull"><img src="img/bull.png"  alt="Bulls &amp; Cows"/></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 text-left">
+                            <ul class="cows">
+                                <li class="title">Cows:</li>
+                                <li class="cow"><img src="img/cow.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="cow"><img src="img/cow.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="cow"><img src="img/cow.png"  alt="Bulls &amp; Cows"/></li>
+                                <li class="cow"><img src="img/cow.png"  alt="Bulls &amp; Cows"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- / Guessing panel -->
+            <div class="row" id="code-input">
+                <div class="col-xs-12">
+                    <p class="text-center">
+                        <button class="btn btn-sq btn-primary number-key" data-number="1">1</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="2">2</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="3">3</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="4">4</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="5">5</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="6">6</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="7">7</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="8">8</button>
+                        <button class="btn btn-sq btn-primary number-key" data-number="9">9</button>
+                    </p>
+                    <p class="text-center">
+                        <button class="btn btn-lg btn-success" disabled="disabled" id="guess">GET MY FIRST GUESS</button>&nbsp;
+                        <button class="btn btn-lg btn-success" disabled="disabled" id="lock">LOCK IT IN!</button>&nbsp;
+                        <button class="btn btn-lg btn-danger" id="backspace"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+                    </p>
+                </div>
+            </div>
+            <!-- / Guesses -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-center">My Guesses</h2>
+                    <div id="guesses">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <p class="triangle-border" id="message">
+                If you input a number and lock it in, I'll do my best to guess it!
+                <button id="start" class="btn btn-lg btn-success">I'm on it!</button>
+            </p>
+            <p><img src="img/wizard.png" id="mrbull"  alt="Bulls &amp; Cows"/></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>Written by Steven Hughes - developer@dotthis.co.uk | GITHUB // <a href="https://github.com/dotthis/">Dotthis.</a></p>
+    </footer>
+    <div id="playagainwrapper">
+        <div class="panel">
+            <p class="text-center">Wow, it looks like I did a good job!! Actually I had some helps,<br/>
+                Thanks <a href="https://en.wikipedia.org/wiki/Mastermind_%28board_game%29#Five-guess_algorithm" target="_blank">Donald Knuth!</a>
+                <br/><br/>
+                <button id="restart" class="btn btn-lg btn-success">Play again?</button>
+            </p>
+        </div>
+    </div>
+</div> <!-- /container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/guessyournumber.js"></script>
+</body>
+</html>
