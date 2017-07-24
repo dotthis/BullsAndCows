@@ -9,11 +9,11 @@ This project users PSR and composers Autoloading, so you'll need to run `compose
 ### Licence
 Feel free to modify, edit or use pieces of this project in your own projects. I have heavily commented each file so there should be n confusion as to what's going on.
 
-####Points of interest
+#### Points of interest
 - My [PermutationGenerator](https://github.com/dotthis/BullsAndCows/blob/master/src/Generators/PermutationGenerator.php) class generates all unique permutations or a range of numbers.
 - My [BullsAndCowsSolver](https://github.com/dotthis/BullsAndCows/blob/master/src/Solvers/BullsAndCowsSolver.php), used in combination with my [ScoreGenerator](https://github.com/dotthis/BullsAndCows/blob/master/src/Generators/ScoreGenerator.php) and [ScoreJsonModel](https://github.com/dotthis/BullsAndCows/blob/master/src/Models/ScoreJsonModel.php) works well.
 
-##I used the following references when developing this Project.
+## I used the following references when developing this Project.
 
 - https://en.wikipedia.org/wiki/Mastermind_%28board_game%29#Five-guess_algorithm
 - http://www.delphiforfun.org/Programs/Download/Mastermind%20Algorithm.doc - Word Doc Download, **__NOT A SITE__**
