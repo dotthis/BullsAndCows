@@ -120,7 +120,7 @@ body {
  * A centered message is displayed at the end of a game.
  */
 #playagainwrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
