@@ -7,7 +7,7 @@ You can view a live demo at <http://bullsandcows.dotthis.co.uk> or run an automa
 This project users PSR and composers Autoloading, so you'll need to run `composer install` if installing this locally.
 
 ### Licence
-Feel free to modify, edit or use pieces of this project in your own projects. I have heavily commented each file so there should be n confusion as to what's going on.
+Feel free to modify, edit or use pieces of this project in your own projects. I have heavily commented each file so there should be no confusion as to what's going on.
 
 #### Points of interest
 - My [PermutationGenerator](https://github.com/dotthis/BullsAndCows/blob/master/src/Generators/PermutationGenerator.php) class generates all unique permutations or a range of numbers.
